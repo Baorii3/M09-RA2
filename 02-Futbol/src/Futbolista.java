@@ -50,12 +50,13 @@ public class Futbolista extends Thread{
             futbolistes[i] = new Futbolista(noms[i]);
             futbolistes[i].start();
         }
-        System.out.println("Fi dels xuts------------");
-        
 
         for (Futbolista fb : futbolistes) {
             fb.join();
         }
+        
+        System.out.println("Fi dels xuts------------");
+
         System.out.println("---Estadistiques----");
         for (Futbolista fb : futbolistes) {
             System.out.printf("%-9s -> %d gols%n", fb.getNom(), fb.getNgols());
