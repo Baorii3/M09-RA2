@@ -20,6 +20,7 @@ public class Coet {
             System.out.println("Potencia no valida");
             return;
         }
+        System.out.println("Passant a potència: " + potencia);
         motor.setPotencia(potencia);
         motor2.setPotencia(potencia);
         motor3.setPotencia(potencia);
