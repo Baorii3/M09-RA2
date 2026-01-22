@@ -25,6 +25,9 @@ public class Compte {
     }
 
     public synchronized void treure(float quantitat) {
+        if ((saldo - quantitat) < 0) {
+            return;
+        }
         saldo -= quantitat;
     }
 }
