@@ -22,16 +22,19 @@ public class Soci extends Thread{
     public void run() {
         for (int a = 0; a < random.nextInt(maxAnys); a++) {
             for (int i = 0; i < 12; i++) {
-                if (i % 2 == 0) {
-                    compte.ingressar(aportacio);
-                } else {
-                    compte.treure(aportacio);
+                synchronized (compte) {
+                    if (i % 2 == 0) {
+                            compte.setSaldo(compte.getSaldo()+aportacio);
+                        
+                    }else {
+                            compte.setSaldo(compte.getSaldo()-aportacio);
+                    }
                 }
                 try {
-                    Thread.sleep(random.nextInt(esperaMax));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                        Thread.sleep(random.nextInt(esperaMax));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
             }
         }
     }
