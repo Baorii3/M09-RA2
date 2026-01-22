@@ -1,6 +1,6 @@
 public class Compte {
 
-    public int saldo;    
+    public float saldo;    
     public static Compte instancia = new Compte();
     
     private Compte() {
@@ -13,7 +13,7 @@ public class Compte {
         return instancia;
     }
 
-    public int getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
     public void setSaldo(int saldo) {
