@@ -12,7 +12,7 @@ public class Asistent extends Thread {
     @Override
     public void run(){
         while(true) {
-            if (random.nextDouble() < 0.3) {
+            if (random.nextDouble() < 0.5) {
                 try {
                     esdeveniment.ferRreserva(this);
                 } catch (InterruptedException e) {
