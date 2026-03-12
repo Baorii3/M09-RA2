@@ -22,7 +22,6 @@ public class Fumador extends Thread {
             paper = null;
             llumi = null;
         }
-
     }
 
     public void comprar() {
